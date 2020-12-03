@@ -37,6 +37,14 @@ public class Main {
                         // Method CRUD(ADD, UPDATE, DELETE)
                         // Search Any product in medicaments
 
+                        System.out.println("(1) add medicament");
+                        System.out.println("(2) delete medicament");
+                        System.out.println("(3) update medicament");
+                        System.out.println("(4) show all medicaments");
+                        System.out.println("(5) search about any medicament in list medicament");
+                        System.out.println("(6) End");
+                        System.out.println("(? > 6) retour à les Choix");
+
                         System.out.println("CHoix :");
 
                         int choixPharmacien = scanner.nextInt();
@@ -46,14 +54,16 @@ public class Main {
                                 int id = medicaments.size() + 1;
 
                                 System.out.println("add name Product: \n");
-                                String nameProduct = scanner.nextLine();
-
-                                System.out.println("add description Product: \n");
-                                String descriptionProduct = scanner.next();
+                                String nameProduct = scanner.next();
 
                                 System.out.println("Add price product: \n");
                                 int price = scanner.nextInt();
                                 System.out.println("DH");
+
+
+                                System.out.println("add description Product: \n");
+                                String descriptionProduct = scanner.next();
+
 
                                 Medicament medicament = new Medicament(id, nameProduct, descriptionProduct, price);
                                 medicaments.add(medicament);
@@ -66,7 +76,7 @@ public class Main {
                                 System.out.println("Medicament deleted !!");
 
                                 for(int i = 0; i < medicaments .size(); i++){
-                                    System.out.format("%10s %10s %10s", i + 1,
+                                    System.out.format("%10s %10s %10s %10s %10s", i + 1,
                                             medicaments.get(i).getId(),
                                             medicaments.get(i).getNameProduct(),
                                             medicaments.get(i).getDescriptionProduct(),
@@ -86,7 +96,7 @@ public class Main {
                                 System.out.println("---------------------------------------------------");
 
                                 for(int i = 0; i < medicaments.size(); i++){
-                                    System.out.format("%10s %10s %10s", i + 1,
+                                    System.out.format("%10s %10s %10s %10s %10s", i + 1,
                                             medicaments.get(i).getId(),
                                             medicaments.get(i).getNameProduct(),
                                             medicaments.get(i).getDescriptionProduct(),
@@ -126,7 +136,7 @@ public class Main {
                                 System.out.println("------------------------------------------------------");
 
                                 for(int i = 0; i < medicaments.size(); i++){
-                                    System.out.format("%10s %10s %10s", i + 1,
+                                    System.out.format("%10s %10s %10s %10s %10s", i + 1,
                                             medicaments.get(i).getId(),
                                             medicaments.get(i).getNameProduct(),
                                             medicaments.get(i).getDescriptionProduct(),
@@ -136,8 +146,34 @@ public class Main {
                                 System.out.println("------------------------------------------------------");
 
                                 break;
-
                             case 5:
+                                System.out.println("Search your medicament");
+                                String search = scanner.next();
+
+                                System.out.println("-----------------------------------------------");
+                                System.out.printf("%10s %10s %10s %10s %10s", "ID dans table", "ID", "name ", "description", "price");
+                                System.out.println();
+                                System.out.println("-----------------------------------------------");
+
+
+                                for(int i = 0; i < medicaments.size(); i++){
+                                    if(medicaments.get(i).getNameProduct().contains(search)){
+                                        System.out.format("%10s %10s %10s %10s %10s", i + 1,
+                                                medicaments.get(i).getId(),
+                                                medicaments.get(i).getNameProduct(),
+                                                medicaments.get(i).getDescriptionProduct(),
+                                                medicaments.get(i).getPrice());
+                                        System.out.println();
+                                        System.out.println("Yes is excesste");
+                                        System.out.println("------------------------------");
+                                    }else{
+                                        System.out.println("this medicament is not in stock");
+                                    }
+                                }
+
+
+                                    break;
+                            case 6:
                                 System.out.println("End");
                                 variable1 = false;
                                 var = true;
@@ -157,7 +193,9 @@ public class Main {
                         // Gestion Client
                         // ADD Client
                         // if client fedéle else not fedéle
-
+                        System.out.println("(1) add client");
+                        System.out.println("(2) delete client");
+                        System.out.println("(5) retour à les Choix");
 
                         System.out.println("Choix :");
                         int choixClient = scanner.nextInt();
@@ -186,13 +224,15 @@ public class Main {
                                 clients.add(client);
 
                                if((phone >= 10)){
-                                   System.out.println("Add Client");
+                                   System.out.println("Client Added");
                                }else{
                                    System.out.println("error in length number the phone ");
                                }
 
                                 if(someVente >= 3){
+                                    System.out.println();
                                     System.out.println("cette person une client fedéle :) :)");
+                                    System.out.println();
                                 }else{
                                     System.out.println("cette person n' a pas une client fedéle ");
                                 }
@@ -207,7 +247,7 @@ public class Main {
                                 System.out.println("----------------------------------------------");
 
                                 for(int i = 0; i < clients.size(); i++){
-                                    System.out.format("%10s %10s %10s", i + 1,
+                                    System.out.format("%10s %10s %10s %10s %10s", i + 1,
                                             clients.get(i).getId(),
                                             clients.get(i).getFirstname(),
                                             clients.get(i).getLastname(),
@@ -219,10 +259,10 @@ public class Main {
                                 System.out.println("-----------------------------------------------");
 
                                 System.out.println("select client to deleted !!");
-                                System.out.println("Are you sure ???");
-                                int delete = scanner.nextInt();
+                                System.out.println("Are you sure (yes)  or  (no) ???");
+                                String delete = scanner.next();
                                 switch (delete){
-                                    case 1:
+                                    case "yes":
                                         clients.remove(scanner.nextInt() - 1);
                                         System.out.println("deletes succussfly");
                                         break;
@@ -231,7 +271,7 @@ public class Main {
                                         System.out.println("Not Sure");
                                         break;
                                 }
-                                System.out.println("deletes succussfly");
+
 
                                 break;
 
