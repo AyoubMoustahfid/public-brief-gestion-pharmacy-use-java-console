@@ -1,7 +1,5 @@
 package com.company;
 
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -43,7 +41,7 @@ public class Main {
                         System.out.println("(4) show all medicaments");
                         System.out.println("(5) search about any medicament in list medicament");
                         System.out.println("(6) End");
-                        System.out.println("(? > 6) retour Ã  les Choix");
+                        System.out.println("(? > 6) retour à  les Choix");
 
                         System.out.println("CHoix :");
 
@@ -147,6 +145,8 @@ public class Main {
 
                                 break;
                             case 5:
+                            	// ============================ Search any medicament ==============================
+                            	
                                 System.out.println("Search your medicament");
                                 String search = scanner.next();
 
@@ -192,7 +192,7 @@ public class Main {
                     while(variable2){
                         // Gestion Client
                         // ADD Client
-                        // if client fedÃ©le else not fedÃ©le
+                        // if client fedéle else not fedéle
                         System.out.println("(1) add client");
                         System.out.println("(2) delete client");
                         System.out.println("(5) retour Ã  les Choix");
@@ -216,7 +216,7 @@ public class Main {
                                 System.out.println("add email Client: \n");
                                 String email = scanner.next();
 
-                                System.out.println("AjoutÃ© Some Vente Client : \n");
+                                System.out.println("Ajouté Some Vente Client : \n");
                                 int someVente = scanner.nextInt();
 
 
@@ -231,10 +231,10 @@ public class Main {
 
                                 if(someVente >= 3){
                                     System.out.println();
-                                    System.out.println("cette person une client fedÃ©le :) :)");
+                                    System.out.println("cette person une client fedéle :) :)");
                                     System.out.println();
                                 }else{
-                                    System.out.println("cette person n' a pas une client fedÃ©le ");
+                                    System.out.println("cette person n' a pas une client fedéle ");
                                 }
 
 
